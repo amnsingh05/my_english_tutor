@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses | My English Tutor</title>
+  <link rel="stylesheet" href="courses.css" />
+</head>
+
+<body>
+
+  <!-- ========================= NAVBAR ========================= -->
+  <header class="navbar">
+
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <!-- PROGRAMS DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">ILETS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html" class="active">Courses</a>
+      <a href="reports.html">My Reports</a>
+    </nav>
+
+    <!-- PROFILE SECTION -->
+    <div class="profile-section">
+      <img src="profile.png" class="profile-img" alt="Profile">
+      <div class="profile-btn" id="usernameDisplay">User ▼</div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="myprofile.html">My Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- ========================= PAGE HEADER ========================= -->
+  <section class="header">
+    <h1>Explore Courses</h1>
+    <p>Improve your English step-by-step with structured skill-based lessons.</p>
+  </section>
+
+
+  <!-- ========================= SEARCH + FILTERS ========================= -->
+  <section class="controls">
+    <input type="text" id="searchInput" placeholder="Search courses...">
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="beginner">Beginner</button>
+      <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+      <button class="filter-btn" data-filter="advanced">Advanced</button>
+    </div>
+  </section>
+
+
+  <!-- ========================= COURSE GRID ========================= -->
+  <section class="course-grid" id="courseGrid">
+
+    <!-- 1. Beginner -->
+    <div class="course-card" data-level="beginner">
+      <img src="img/habit.jpg" />
+      <h3>English Basics Mastery</h3>
+      <p>Perfect for beginners to build grammar, vocabulary & simple speaking skills.</p>
+      <span class="level beginner">Beginner</span>
+      <button onclick="openCourse('basics')">View Course</button>
+    </div>
+
+    <!-- 2. Intermediate -->
+    <div class="course-card" data-level="intermediate">
+      <img src="img/speaking.jpg" />
+      <h3>Conversation Fluency Course</h3>
+      <p>Improve clarity, accent, tone & real-life speaking confidence.</p>
+      <span class="level intermediate">Intermediate</span>
+      <button onclick="openCourse('fluency')">View Course</button>
+    </div>
+
+    <!-- 3. Advanced -->
+    <div class="course-card" data-level="advanced">
+      <img src="img/business.jpg" />
+      <h3>Business English for Work</h3>
+      <p>Master emails, meetings, presentations & corporate communication.</p>
+      <span class="level advanced">Advanced</span>
+      <button onclick="openCourse('business')">View Course</button>
+    </div>
+
+    <!-- 4. Intermediate -->
+    <div class="course-card" data-level="intermediate">
+      <img src="img/writing.jpg" />
+      <h3>English Writing Excellence</h3>
+      <p>Learn storytelling, reports, essays & professional writing skills.</p>
+      <span class="level intermediate">Intermediate</span>
+      <button onclick="openCourse('writing')">View Course</button>
+    </div>
+
+  </section>
+
+
+  <!-- ========================= ENROLL POPUP ========================= -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <h2 id="popupTitle">Course Name</h2>
+      <p>Start learning this course now!</p>
+      <button class="enroll-btn">Enroll Now</button>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+
+  <!-- ========================= JAVASCRIPT ========================= -->
+  <script>
+    /* LOGIN VALIDATION */
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const user = JSON.parse(localStorage.getItem("userData"));
+    if (!isLoggedIn || !user) window.location.href = "login.html";
+
+    document.getElementById("usernameDisplay").textContent = user.name + " ▼";
+
+    /* PROFILE DROPDOWN */
+    const profileBtn = document.querySelector(".profile-btn");
+    const profileMenu = document.querySelector(".profile-menu");
+
+    profileBtn.addEventListener("click", () => {
+      profileMenu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+        profileMenu.classList.remove("show");
+      }
+    });
+
+    /* LOGOUT */
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    });
+
+    /* OPEN COURSE POPUP */
+    function openCourse(courseName) {
+      document.getElementById("popupTitle").innerText = courseName.toUpperCase();
+      document.getElementById("popupOverlay").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>

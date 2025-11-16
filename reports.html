@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Reports | My English Tutor</title>
+  <link rel="stylesheet" href="reports.css" />
+</head>
+
+<body>
+
+  <!-- ========================= NAVBAR ========================= -->
+  <header class="navbar">
+    
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <!-- PROGRAMS DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">ILETS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html" class="active">My Reports</a>
+    </nav>
+
+    <!-- PROFILE SECTION (same as dashboard) -->
+    <div class="profile-section">
+
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" alt="User">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="myprofile.html">My Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+
+    </div>
+  </header>
+
+
+
+  <!-- ========================= PAGE HEADER ========================= -->
+  <section class="header">
+    <h1>My Learning Reports</h1>
+    <p>Track your growth, analyze your skills, and boost your learning journey.</p>
+  </section>
+
+
+
+  <!-- ========================= SUMMARY CARDS ========================= -->
+  <section class="summary-section">
+
+    <div class="summary-card">
+      <h3>Total Learning Time</h3>
+      <p class="value">120 min</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>Current Streak</h3>
+      <p class="value">🔥 5 Days</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>Courses Completed</h3>
+      <p class="value">2 / 6</p>
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================= SKILL PROGRESS ========================= -->
+  <section class="skills">
+    <h2>Skill Progress</h2>
+
+    <div class="skill">
+      <span>Speaking</span>
+      <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>Writing</span>
+      <div class="bar"><div class="fill" style="width: 50%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>Listening</span>
+      <div class="bar"><div class="fill" style="width: 60%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <span>Vocabulary</span>
+      <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================= COURSE PROGRESS ========================= -->
+  <section class="courses-progress">
+    <h2>Course Progress</h2>
+
+    <div class="course-progress-card">
+      <h3>English Basics Mastery</h3>
+      <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+      <span>90% Complete</span>
+    </div>
+
+    <div class="course-progress-card">
+      <h3>Conversation Fluency</h3>
+      <div class="progress-bar"><div class="progress" style="width: 40%;"></div></div>
+      <span>40% Complete</span>
+    </div>
+
+    <div class="course-progress-card">
+      <h3>Business English for Work</h3>
+      <div class="progress-bar"><div class="progress" style="width: 20%;"></div></div>
+      <span>20% Complete</span>
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================= DOWNLOAD REPORT ========================= -->
+  <div class="download-box">
+    <button class="download-btn">Download My Report (PDF)</button>
+  </div>
+
+
+
+  <!-- ========================= SCRIPT ========================= -->
+  <script>
+    /* USER LOGIN CHECK */
+    const user = JSON.parse(localStorage.getItem("userData"));
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (!isLoggedIn || !user) window.location.href = "login.html";
+
+    document.getElementById("usernameDisplay").textContent = user.name + " ▼";
+
+
+
+    /* PROFILE MENU TOGGLE */
+    const profileBtn = document.querySelector('.profile-btn');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    profileBtn.addEventListener('click', () => {
+      profileMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+        profileMenu.classList.remove('show');
+      }
+    });
+
+
+
+    /* LOGOUT FUNCTION */
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>

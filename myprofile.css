@@ -1,0 +1,326 @@
+/* -----------------------------------
+   GLOBAL
+----------------------------------- */
+* {
+  box-sizing: border-box;
+  transition: 0.25s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f3f5ff;
+  color: #222;
+}
+
+/* -----------------------------------
+   NAVBAR
+----------------------------------- */
+.navbar {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 6px 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   NAVBAR DROPDOWN (PROGRAMS)
+----------------------------------- */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-size: 15px;
+}
+
+.dropdown-content {
+  display: none;
+  background: #fff;
+  position: absolute;
+  top: 40px;
+  padding: 10px 0;
+  min-width: 170px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background: #eef0ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* -----------------------------------
+   PROFILE SECTION
+----------------------------------- */
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #4338ca;
+  object-fit: cover;
+}
+
+/* Username Button */
+.profile-btn {
+  background: #4338ca;
+  padding: 10px 18px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* Profile Dropdown */
+.profile-menu {
+  position: absolute;
+  right: 0;
+  top: 52px;
+  width: 170px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 0;
+  display: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  z-index: 200;
+}
+
+.profile-menu.show {
+  display: block;
+}
+
+.profile-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.profile-menu a:hover {
+  background: #eef0ff;
+}
+
+/* -----------------------------------
+   PROFILE HEADER
+----------------------------------- */
+.profile-top {
+  display: flex;
+  gap: 35px;
+  padding: 40px;
+  align-items: center;
+}
+
+.profile-large {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #4338ca;
+  object-fit: cover;
+}
+
+.upload-btn {
+  display: block;
+  margin-top: 12px;
+  background: #4338ca;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
+
+#uploadPhoto {
+  display: none;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.edit-btn {
+  padding: 10px 22px;
+  background: #4338ca;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* -----------------------------------
+   PERSONAL DETAILS SECTION
+----------------------------------- */
+.details-section {
+  background: white;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+}
+
+.details-section h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Input Boxes */
+.detail-box label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.detail-box input,
+.detail-box select,
+.detail-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  resize: none;
+}
+
+/* Make textarea bigger */
+.detail-box textarea {
+  height: 100px;
+}
+
+/* Full width (for bio area) */
+.full-width {
+  grid-column: span 2;
+}
+
+/* Save Button */
+.save-btn {
+  margin-top: 20px;
+  padding: 12px 32px;
+  background: #4338ca;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.save-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* -----------------------------------
+   LEARNING STATS
+----------------------------------- */
+.learning-stats {
+  padding: 40px;
+}
+
+.learning-stats h2 {
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 260px;
+  padding: 25px;
+  background: white;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.stat-card .big {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* -----------------------------------
+   RESPONSIVE
+----------------------------------- */
+@media (max-width: 768px) {
+  .profile-top {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .full-width {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,287 @@
+/* -----------------------------------
+   GLOBAL SETTINGS
+----------------------------------- */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f3f5ff;
+  color: #222;
+}
+
+* { box-sizing: border-box; transition: 0.25s; }
+
+/* -----------------------------------
+   NAVBAR
+----------------------------------- */
+.navbar {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #555;
+}
+
+.nav-links a.active {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   PROGRAMS DROPDOWN
+----------------------------------- */
+.dropdown { position: relative; }
+
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+}
+
+.dropbtn:hover { color: #4338ca; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  background: white;
+  padding: 10px 0;
+  min-width: 170px;
+  border-radius: 10px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.15);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #444;
+}
+
+.dropdown-content a:hover { background: #eef0ff; }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* -----------------------------------
+   PROFILE SECTION (ADDED)
+----------------------------------- */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* Circle profile photo */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  background: url('profile.png') center/cover;
+  border-radius: 50%;
+  border: 2px solid #4338ca;
+}
+
+/* Button with username */
+.profile-btn {
+  background: #4338ca;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+}
+
+/* Dropdown menu */
+.profile-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 55px;
+  width: 170px;
+  background: white;
+  border-radius: 12px;
+  padding: 10px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.profile-menu.show { display: block; }
+
+.profile-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #444;
+}
+
+.profile-menu a:hover {
+  background: #eef0ff;
+}
+
+/* -----------------------------------
+   HEADER
+----------------------------------- */
+.header {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+.header h1 { font-size: 36px; }
+.header p { color: #555; font-size: 18px; }
+
+/* -----------------------------------
+   SEARCH + FILTER CONTROLS
+----------------------------------- */
+.controls {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#searchInput {
+  width: 300px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #bbb;
+  font-size: 16px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background: #eaeaff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #4338ca;
+  color: white;
+}
+
+/* -----------------------------------
+   COURSE CARDS
+----------------------------------- */
+.course-grid {
+  padding: 20px 40px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+}
+
+.course-card img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.course-card h3 {
+  margin: 12px 0 6px;
+}
+
+.course-card p {
+  color: #555;
+  font-size: 14px;
+}
+
+.course-card button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #4338ca;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Level Tags */
+.level {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.beginner { background: #10b981; }
+.intermediate { background: #f59e0b; }
+.advanced { background: #ef4444; }
+
+/* -----------------------------------
+   POPUP (Enroll Modal)
+----------------------------------- */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+}
+
+.popup {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+}
+
+.close-btn {
+  margin-top: 10px;
+  background: #ccc;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.enroll-btn {
+  padding: 10px 20px;
+  background: #4338ca;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}

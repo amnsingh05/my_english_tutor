@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | My English Tutor</title>
+  <link rel="stylesheet" href="myprofile.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">IELTS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html">My Reports</a>
+      <a class="active" href="profile.html">My Profile</a>
+    </nav>
+
+    <div class="profile-section">
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" alt="Profile" id="profilePhotoPreview">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="profile.html">My Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- ========== PROFILE HEADER ========== -->
+  <section class="profile-top">
+    <div class="profile-photo-container">
+      <img src="profile.png" id="photoPreview" class="profile-large" alt="User">
+      <label for="uploadPhoto" class="upload-btn">Change Photo</label>
+      <input type="file" id="uploadPhoto" accept="image/*" />
+    </div>
+
+    <div class="profile-info">
+      <h1 id="nameDisplay">User Name</h1>
+      <p>Member since 2024 • English Learning Journey</p>
+
+      <button class="edit-btn" id="editBtn">Edit Profile</button>
+    </div>
+  </section>
+
+
+
+  <!-- ========== PROFILE DETAILS ========== -->
+  <section class="details-section">
+    <h2>Personal Details</h2>
+
+    <div class="details-grid">
+
+      <div class="detail-box">
+        <label>Name</label>
+        <input type="text" id="nameInput" disabled />
+      </div>
+
+      <div class="detail-box">
+        <label>Email</label>
+        <input type="email" id="emailInput" disabled />
+      </div>
+
+      <div class="detail-box">
+        <label>Phone</label>
+        <input type="text" id="phoneInput" placeholder="+91 9876543210" disabled />
+      </div>
+
+      <div class="detail-box">
+        <label>Country</label>
+        <input type="text" id="countryInput" disabled />
+      </div>
+
+      <div class="detail-box">
+        <label>Date of Birth</label>
+        <input type="date" id="dobInput" disabled />
+      </div>
+
+      <div class="detail-box">
+        <label>Gender</label>
+        <select id="genderInput" disabled>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="detail-box">
+        <label>English Level</label>
+        <select id="levelInput" disabled>
+          <option value="">Select Level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+
+      <div class="detail-box">
+        <label>Learning Goal</label>
+        <select id="goalInput" disabled>
+          <option value="">Choose Goal</option>
+          <option>Improve Speaking</option>
+          <option>Crack Job Interview</option>
+          <option>Get IELTS Band 7+</option>
+          <option>Improve Pronunciation</option>
+          <option>Fluent Communication</option>
+        </select>
+      </div>
+
+      <div class="detail-box full-width">
+        <label>About Me</label>
+        <textarea id="bioInput" placeholder="Tell something about yourself..." disabled></textarea>
+      </div>
+
+    </div>
+
+    <button class="save-btn" id="saveBtn" disabled>Save Changes</button>
+  </section>
+
+
+
+  <!-- ========== LEARNING STATS ========== -->
+  <section class="learning-stats">
+    <h2>Learning Stats</h2>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <h3>Learning Time</h3>
+        <p class="big">120 min</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Current Streak</h3>
+        <p class="big">5 days</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Courses Completed</h3>
+        <p class="big">2</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========== SCRIPT ========== -->
+  <script>
+    /** LOGIN CHECK **/
+    const user = JSON.parse(localStorage.getItem("userData"));
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (!isLoggedIn || !user) window.location.href = "login.html";
+
+    document.getElementById("usernameDisplay").textContent = user.name + " ▼";
+    document.getElementById("nameDisplay").textContent = user.name;
+
+    // Fill data
+    document.getElementById("nameInput").value = user.name;
+    document.getElementById("emailInput").value = user.email || "";
+    document.getElementById("countryInput").value = user.country || "";
+
+    document.getElementById("phoneInput").value = user.phone || "";
+    document.getElementById("dobInput").value = user.dob || "";
+    document.getElementById("genderInput").value = user.gender || "";
+    document.getElementById("levelInput").value = user.level || "";
+    document.getElementById("goalInput").value = user.goal || "";
+    document.getElementById("bioInput").value = user.bio || "";
+
+    /** PROFILE MENU **/
+    const profileBtn = document.querySelector(".profile-btn");
+    const profileMenu = document.querySelector(".profile-menu");
+
+    profileBtn.addEventListener("click", () => {
+      profileMenu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!profileBtn.contains(e.target) && !profileMenu.contains(e.target)) {
+        profileMenu.classList.remove("show");
+      }
+    });
+
+    /** LOGOUT **/
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    });
+
+    /** EDIT BUTTON **/
+    document.getElementById("editBtn").addEventListener("click", () => {
+      document.querySelectorAll("input, select, textarea").forEach(i => i.disabled = false);
+      document.getElementById("saveBtn").disabled = false;
+    });
+
+    /** CHANGE PHOTO **/
+    document.getElementById("uploadPhoto").addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const url = URL.createObjectURL(file);
+      document.getElementById("photoPreview").src = url;
+      document.getElementById("profilePhotoPreview").src = url;
+    });
+  </script>
+
+</body>
+</html>
