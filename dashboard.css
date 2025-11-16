@@ -1,120 +1,181 @@
-/* ------------------------------
-   GLOBAL STYLES
---------------------------------*/
+/* -----------------------------------
+   GLOBAL SETTINGS
+----------------------------------- */
+* {
+  box-sizing: border-box;
+  transition: 0.25s ease;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Inter", Arial, sans-serif;
-  background: #f4f6ff;
+  background: #f3f5ff;
   color: #333;
 }
 
-/* Smooth animations */
-* {
-  transition: 0.25s ease;
-}
-
-/* ------------------------------
+/* -----------------------------------
    NAVBAR
---------------------------------*/
+----------------------------------- */
 .navbar {
-  background: #ffffff;
+  background: #fff;
   padding: 15px 40px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  z-index: 300;
+  z-index: 100;
 }
 
 .logo {
   font-size: 22px;
   font-weight: 700;
-  color: #333;
+  color: #222;
 }
 
-nav a {
-  margin: 0 18px;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* -----------------------------------
+   NAV LINKS
+----------------------------------- */
+.nav-links a,
+.dropbtn {
   text-decoration: none;
-  font-size: 15px;
   font-weight: 500;
   color: #555;
-}
-
-nav a:hover,
-nav a.active {
-  color: #4338ca;
-}
-
-/* ------------------------------
-   PROFILE DROPDOWN
---------------------------------*/
-.profile-dropdown {
-  position: relative;
+  padding: 8px 4px;
   cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 15px;
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.dropbtn:hover {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* -----------------------------------
+   DROPDOWN (PROGRAMS)
+----------------------------------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #fff;
+  min-width: 170px;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  display: none;
+  padding: 8px 0;
+  z-index: 200;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #444;
+}
+
+.dropdown-content a:hover {
+  background: #eef0ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* -----------------------------------
+   PROFILE SECTION
+----------------------------------- */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  background: url('profile.jpg') center/cover;
+  border-radius: 50%;
+  border: 2px solid #4338ca;
 }
 
 .profile-btn {
   background: #4338ca;
-  color: white;
   padding: 10px 18px;
+  color: #fff;
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
+  border: none;
 }
 
-.dropdown-menu {
+.profile-menu {
   position: absolute;
   right: 0;
-  top: 48px;
-  background: white;
-  width: 160px;
+  top: 52px;
+  width: 170px;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   padding: 10px 0;
   display: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
-.dropdown-menu a {
+.profile-menu.show {
+  display: block;
+}
+
+.profile-menu a {
   display: block;
   padding: 10px 15px;
-  text-decoration: none;
   color: #444;
+  text-decoration: none;
   font-size: 14px;
 }
 
-.dropdown-menu a:hover {
+.profile-menu a:hover {
   background: #eef0ff;
 }
 
-/* Show dropdown on hover */
-.profile-dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ------------------------------
-   STATS BAR
---------------------------------*/
+/* -----------------------------------
+   STATS BOXES
+----------------------------------- */
 .stats-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 40px 60px;
   flex-wrap: wrap;
+  gap: 25px;
+  padding: 40px 60px;
 }
 
 .stat-box {
+  width: 260px;
   background: #fff;
-  padding: 25px 28px;
-  width: 250px;
+  padding: 25px;
   border-radius: 18px;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
 }
 
 .stat-icon {
-  font-size: 22px;
+  font-size: 30px;
   margin-bottom: 8px;
 }
 
@@ -127,77 +188,83 @@ nav a.active {
   font-size: 28px;
   font-weight: 700;
   margin-top: 5px;
-  color: #222;
 }
 
-/* ------------------------------
-   WEEK STREAK
---------------------------------*/
-.week-container {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+/* -----------------------------------
+   ACTIVITY GRID
+----------------------------------- */
+.practice-activity {
+  width: 340px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
 }
 
-.day {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #e4e6ff;
-  color: #555;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size: 15px;
-  position: relative;
-}
-
-.day.active {
-  background: #4338ca;
-  color: white;
-  box-shadow: 0 0 10px rgba(67,56,202,0.6);
-}
-
-/* Tick mark */
-.day.completed::after {
-  content: "✔";
-  position: absolute;
-  bottom: -20px;
+.practice-activity h3 {
+  margin-bottom: 15px;
   font-size: 18px;
-  color: #27ae60;
 }
 
-/* ------------------------------
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.activity-box {
+  width: 35px;
+  height: 35px;
+  background: #dfe1ff;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.activity-box.completed {
+  background: #4338ca;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(67, 56, 202, 0.4);
+}
+
+.activity-box:hover {
+  transform: scale(1.12);
+}
+
+/* -----------------------------------
    BANNER
---------------------------------*/
+----------------------------------- */
 .banner {
   width: 88%;
   margin: 40px auto;
-  background: #dfe8ff;
   padding: 45px;
+  background: #dce3ff;
   border-radius: 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
 }
 
 .banner-text h1 {
   font-size: 34px;
-  font-weight: 700;
   margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .banner-text p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   color: #555;
 }
 
 .banner-text ul {
   padding-left: 18px;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .banner-text li {
@@ -206,14 +273,14 @@ nav a.active {
 }
 
 .start-btn {
-  padding: 12px 28px;
   background: #4338ca;
-  color: white;
-  font-size: 16px;
+  color: #fff;
+  padding: 12px 28px;
   border: none;
   border-radius: 25px;
-  cursor: pointer;
+  font-size: 16px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .start-btn:hover {
@@ -225,13 +292,13 @@ nav a.active {
   max-width: 380px;
 }
 
-/* ------------------------------
+/* -----------------------------------
    RESPONSIVE
---------------------------------*/
-@media (max-width: 768px) {
+----------------------------------- */
+@media (max-width: 900px) {
   .stats-container {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
   }
 
   .banner {
@@ -242,13 +309,4 @@ nav a.active {
   .banner-img {
     margin-top: 25px;
   }
-}
-
-/* FIX: dropdown should open only on click */
-.profile-menu {
-  display: none;
-}
-
-.profile-menu.show {
-  display: block;
 }

@@ -3,29 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard</title>
+  <title>Dashboard | My English Tutor</title>
   <link rel="stylesheet" href="dashboard.css" />
 </head>
 
 <body>
 
-  <!-- TOP NAVBAR -->
+  <!-- ========================= NAVBAR ========================= -->
   <header class="navbar">
+
+    <!-- LOGO -->
     <div class="logo">My English Tutor</div>
 
+    <!-- NAVIGATION LINKS -->
     <nav class="nav-links">
       <a href="#" class="active">Home</a>
-      <a href="#">Programs</a>
-      <a href="#">Courses</a>
-      <a href="#">My Reports</a>
-      <a href="#">Pricing</a>
-      <a href="#" class="challenge">Challenge</a>
+
+      <!-- DROPDOWN MENU -->
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+
+        <div class="dropdown-content">
+          <a href="ielts.html">IELTS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html">My Reports</a>
     </nav>
 
-    <!-- PROFILE DROPDOWN -->
+    <!-- USER PROFILE -->
     <div class="profile-section">
-      <div class="profile-btn" id="usernameDisplay">User ▼</div>
 
+      <!-- Profile Circle + Name -->
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" alt="Profile">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <!-- Profile Menu -->
       <div class="profile-menu" id="profileMenu">
         <a href="#">My Profile</a>
         <a href="#">Settings</a>
@@ -33,77 +51,77 @@
         <a href="#" id="logoutBtn">Logout</a>
       </div>
     </div>
+
   </header>
 
-  <!-- STATS BAR -->
+
+  <!-- ========================= STATS SECTION ========================= -->
   <section class="stats-container">
 
+    <!-- Learning Time -->
     <div class="stat-box">
-      <div class="stat-icon">⏱️</div>
-      <div class="stat-title">Speaking Time</div>
+      <div class="stat-icon">📚</div>
+      <div class="stat-title">Learning Time</div>
       <div class="stat-value">0 min</div>
     </div>
 
+    <!-- Streak -->
     <div class="stat-box">
-      <div class="stat-icon">⚡</div>
+      <div class="stat-icon">🔥</div>
       <div class="stat-title">Streak</div>
       <div class="stat-value">0 days</div>
     </div>
 
-    <!-- Weekly Streak -->
-    <div class="week-container">
-      <div class="week-item"><span class="day-name">Mo</span><div class="day-circle"></div></div>
-      <div class="week-item"><span class="day-name">Tu</span><div class="day-circle"></div></div>
-      <div class="week-item"><span class="day-name">We</span><div class="day-circle"></div></div>
-      <div class="week-item"><span class="day-name">Th</span><div class="day-circle"></div></div>
-      <div class="week-item"><span class="day-name">Fr</span><div class="day-circle"></div></div>
-      <div class="week-item"><span class="day-name">Sa</span><div class="day-circle"></div></div>
-      <div class="week-item"><span class="day-name">Su</span><div class="day-circle"></div></div>
+    <!-- Activity -->
+    <div class="practice-activity">
+      <h3 id="monthTitle">Your Practice Activity</h3>
+      <div class="activity-grid"></div>
     </div>
 
   </section>
 
-  <!-- MAIN BANNER SECTION -->
+
+  <!-- ========================= COMMUNITY BENEFITS ========================= -->
   <section class="banner">
+
     <div class="banner-text">
-      <h1>Speaking Level Test</h1>
-      <p>Fast, reliable, and stress-free English certification</p>
+      <h1>Benefits of Joining My Community</h1>
+      <p>Grow your English confidence and fluency with a powerful support system.</p>
 
       <ul>
-        <li>20-minute online test</li>
-        <li>Instant CEFR-level results</li>
-        <li>Clear feedback on strengths and areas to improve</li>
-        <li>Share your certificate on LinkedIn or as a PDF</li>
+        <li>🌍 Join a global English-speaking community</li>
+        <li>🎙️ Daily speaking challenges to boost confidence</li>
+        <li>📅 Weekly live sessions & practice groups</li>
+        <li>📈 Track your speaking progress every month</li>
+        <li>💬 Personalized feedback from mentors</li>
+        <li>🔒 Access exclusive lessons, tools & resources</li>
       </ul>
 
-      <button class="start-btn">Start Test</button>
+      <button class="start-btn">Start Learning</button>
     </div>
 
     <div class="banner-img">
-      <img src="certificate_example.png" alt="certificate">
+      <img src="community.png" alt="Community">
     </div>
+
   </section>
 
-  <!-- SCRIPT -->
+
+  <!-- ========================= SCRIPT ========================= -->
   <script>
 
-    /* --------------------------
-       1. CHECK LOGIN STATUS
-    --------------------------- */
+    /* ---------------- LOGIN CHECK ---------------- */
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const user = JSON.parse(localStorage.getItem("userData"));
 
     if (!isLoggedIn || !user) {
-      window.location.href = "login.html"; // force login
+      window.location.href = "login.html";
     }
 
-    // Show logged-in username
     document.getElementById("usernameDisplay").textContent = user.name + " ▼";
 
 
-    /* --------------------------
-       2. PROFILE DROPDOWN
-    --------------------------- */
+    /* ---------------- PROFILE MENU ---------------- */
     const profileBtn = document.querySelector('.profile-btn');
     const profileMenu = document.querySelector('.profile-menu');
 
@@ -111,34 +129,43 @@
       profileMenu.classList.toggle('show');
     });
 
-    /* Close menu when clicking outside */
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', (event) => {
       if (!profileBtn.contains(event.target) && !profileMenu.contains(event.target)) {
         profileMenu.classList.remove('show');
       }
     });
 
 
-    /* --------------------------
-       3. LOGOUT
-    --------------------------- */
+    /* ---------------- LOGOUT ---------------- */
     document.getElementById("logoutBtn").addEventListener("click", () => {
       localStorage.removeItem("isLoggedIn");
       window.location.href = "login.html";
     });
 
 
-    /* --------------------------
-       4. WEEKLY STREAK (FAKE)
-    --------------------------- */
-    const completedDays = ["Mo", "We"]; 
+    /* ---------------- ACTIVITY BOXES ---------------- */
+    const months = [
+      "January","February","March","April","May","June",
+      "July","August","September","October","November","December"
+    ];
 
-    document.querySelectorAll('.week-item').forEach(item => {
-      const day = item.querySelector(".day-name").textContent;
-      if (completedDays.includes(day)) {
-        item.querySelector(".day-circle").classList.add("active");
+    const today = new Date();
+    const month = months[today.getMonth()];
+    document.getElementById("monthTitle").textContent = month + " Activity";
+
+    const grid = document.querySelector(".activity-grid");
+
+    for (let i = 0; i < 35; i++) {
+      let box = document.createElement("div");
+      box.classList.add("activity-box");
+
+      if (Math.random() > 0.7) {
+        box.classList.add("completed");
+        box.innerHTML = "✔";
       }
-    });
+
+      grid.appendChild(box);
+    }
 
   </script>
 
