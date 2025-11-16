@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">Programs</a>
+      <a href="#">Courses</a>
+      <a href="#">My Reports</a>
+      <a href="#">Pricing</a>
+      <a href="#" class="challenge">Challenge</a>
+    </nav>
+
+    <!-- PROFILE DROPDOWN -->
+    <div class="profile-section">
+      <div class="profile-btn" id="usernameDisplay">User ▼</div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="#">My Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS BAR -->
+  <section class="stats-container">
+
+    <div class="stat-box">
+      <div class="stat-icon">⏱️</div>
+      <div class="stat-title">Speaking Time</div>
+      <div class="stat-value">0 min</div>
+    </div>
+
+    <div class="stat-box">
+      <div class="stat-icon">⚡</div>
+      <div class="stat-title">Streak</div>
+      <div class="stat-value">0 days</div>
+    </div>
+
+    <!-- Weekly Streak -->
+    <div class="week-container">
+      <div class="week-item"><span class="day-name">Mo</span><div class="day-circle"></div></div>
+      <div class="week-item"><span class="day-name">Tu</span><div class="day-circle"></div></div>
+      <div class="week-item"><span class="day-name">We</span><div class="day-circle"></div></div>
+      <div class="week-item"><span class="day-name">Th</span><div class="day-circle"></div></div>
+      <div class="week-item"><span class="day-name">Fr</span><div class="day-circle"></div></div>
+      <div class="week-item"><span class="day-name">Sa</span><div class="day-circle"></div></div>
+      <div class="week-item"><span class="day-name">Su</span><div class="day-circle"></div></div>
+    </div>
+
+  </section>
+
+  <!-- MAIN BANNER SECTION -->
+  <section class="banner">
+    <div class="banner-text">
+      <h1>Speaking Level Test</h1>
+      <p>Fast, reliable, and stress-free English certification</p>
+
+      <ul>
+        <li>20-minute online test</li>
+        <li>Instant CEFR-level results</li>
+        <li>Clear feedback on strengths and areas to improve</li>
+        <li>Share your certificate on LinkedIn or as a PDF</li>
+      </ul>
+
+      <button class="start-btn">Start Test</button>
+    </div>
+
+    <div class="banner-img">
+      <img src="certificate_example.png" alt="certificate">
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+
+    /* --------------------------
+       1. CHECK LOGIN STATUS
+    --------------------------- */
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const user = JSON.parse(localStorage.getItem("userData"));
+
+    if (!isLoggedIn || !user) {
+      window.location.href = "login.html"; // force login
+    }
+
+    // Show logged-in username
+    document.getElementById("usernameDisplay").textContent = user.name + " ▼";
+
+
+    /* --------------------------
+       2. PROFILE DROPDOWN
+    --------------------------- */
+    const profileBtn = document.querySelector('.profile-btn');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    profileBtn.addEventListener('click', () => {
+      profileMenu.classList.toggle('show');
+    });
+
+    /* Close menu when clicking outside */
+    document.addEventListener('click', function(event) {
+      if (!profileBtn.contains(event.target) && !profileMenu.contains(event.target)) {
+        profileMenu.classList.remove('show');
+      }
+    });
+
+
+    /* --------------------------
+       3. LOGOUT
+    --------------------------- */
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    });
+
+
+    /* --------------------------
+       4. WEEKLY STREAK (FAKE)
+    --------------------------- */
+    const completedDays = ["Mo", "We"]; 
+
+    document.querySelectorAll('.week-item').forEach(item => {
+      const day = item.querySelector(".day-name").textContent;
+      if (completedDays.includes(day)) {
+        item.querySelector(".day-circle").classList.add("active");
+      }
+    });
+
+  </script>
+
+</body>
+</html>

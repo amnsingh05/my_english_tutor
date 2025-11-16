@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #d9e4ff);
+  color: #333;
+}
+
+/* Top Bar */
+.top-bar {
+  background: #4338ca;
+  color: white;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1.2px;
+}
+
+nav a {
+  background: white;
+  padding: 9px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #4338ca;
+  font-weight: bold;
+  margin-left: 12px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 44px;
+  margin-bottom: 14px;
+  color: #4338ca;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #5a5a5a;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Box */
+.why-box {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  width: 60%;
+  margin: 20px auto;
+  padding: 35px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.why-box:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+.why-box h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #4338ca;
+  font-weight: bold;
+}
+
+/* Dropdown Styling */
+.reason-box {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #bcbcbc;
+  font-size: 16px;
+  margin-top: 12px;
+  background: white;
+  cursor: pointer;
+}
+
+.reason-box:focus {
+  outline: none;
+  border-color: #4338ca;
+  box-shadow: 0 0 5px rgba(67,56,202,0.4);
+}
+
+/* Button */
+.start-btn {
+  margin-top: 20px;
+  background: #4338ca;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.25s;
+  display: inline-block;
+}
+
+.start-btn:hover {
+  opacity: 0.92;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(67,56,202,0.5);
+}
+
+/* Community Section */
+.community-text {
+  margin-top: 55px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.community-text h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #4338ca;
+  font-weight: bold;
+}
+
+.community-text ul {
+  list-style: none;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.community-text li {
+  margin: 14px 0;
+  font-weight: 500;
+}

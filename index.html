@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My English Tutor — Home</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-bar">
+    <h2 class="logo">My English Tutor</h2>
+    <nav>
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="signup.html" class="login-btn" style="margin-left:10px;">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>My English Tutor</h1>
+    <p class="subtitle">Your personal companion to improve English every day.</p>
+
+    <!-- Step 1 Box -->
+    <div class="why-box">
+      <h3>Why do you want to improve your English?</h3>
+
+      <select id="goal-select" class="reason-box">
+        <option value="">-- Select Your Goal --</option>
+        <option value="ielts">Pass the IELTS exam</option>
+        <option value="job-interview">Get ready for a job interview</option>
+        <option value="test-level">Test my English level</option>
+        <option value="conversation">Improve my conversational English</option>
+        <option value="work">Improve my English for work</option>
+        <option value="teacher">I'm an English teacher</option>
+      </select>
+
+      <!-- Step 2 -->
+      <div id="info-step" style="display:none; margin-top:20px;">
+        <h3>How did you hear about us?</h3>
+        <select id="know-select" class="reason-box">
+          <option value="">-- Select an Option --</option>
+          <option value="friend">A friend told me</option>
+          <option value="social">Found on Instagram / YouTube</option>
+          <option value="google">Google Search</option>
+          <option value="school">Teacher recommended</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Step 3 Button -->
+      <button class="start-btn" id="continue-btn" style="display:none;" onclick="goNext()">Continue</button>
+    </div>
+
+    <!-- Community Section -->
+    <div class="community-text">
+      <h3>Why Join Our Community?</h3>
+      <ul>
+        <li>✔ Improve your English with daily tasks</li>
+        <li>✔ Personalized learning experience</li>
+        <li>✔ Build confidence in speaking and writing</li>
+        <li>✔ Join thousands of learners worldwide</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    // Show next question when User selects goal
+    const goalSelect = document.getElementById("goal-select");
+    const infoStep = document.getElementById("info-step");
+    const continueBtn = document.getElementById("continue-btn");
+    const knowSelect = document.getElementById("know-select");
+
+    goalSelect.addEventListener("change", () => {
+      if (goalSelect.value !== "") {
+        infoStep.style.display = "block";
+      }
+    });
+
+    // Show Continue button after second question
+    knowSelect.addEventListener("change", () => {
+      if (knowSelect.value !== "") {
+        continueBtn.style.display = "inline-block";
+      }
+    });
+
+    function goNext() {
+      // Redirect to signup page
+      window.location.href = "signup.html";
+    }
+  </script>
+
+</body>
+</html>

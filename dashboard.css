@@ -1,0 +1,254 @@
+/* ------------------------------
+   GLOBAL STYLES
+--------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f4f6ff;
+  color: #333;
+}
+
+/* Smooth animations */
+* {
+  transition: 0.25s ease;
+}
+
+/* ------------------------------
+   NAVBAR
+--------------------------------*/
+.navbar {
+  background: #ffffff;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 300;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+}
+
+nav a {
+  margin: 0 18px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+}
+
+nav a:hover,
+nav a.active {
+  color: #4338ca;
+}
+
+/* ------------------------------
+   PROFILE DROPDOWN
+--------------------------------*/
+.profile-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-btn {
+  background: #4338ca;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  background: white;
+  width: 160px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 10px 0;
+  display: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background: #eef0ff;
+}
+
+/* Show dropdown on hover */
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ------------------------------
+   STATS BAR
+--------------------------------*/
+.stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #fff;
+  padding: 25px 28px;
+  width: 250px;
+  border-radius: 18px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.stat-title {
+  font-size: 15px;
+  color: #666;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 5px;
+  color: #222;
+}
+
+/* ------------------------------
+   WEEK STREAK
+--------------------------------*/
+.week-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.day {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #e4e6ff;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+}
+
+.day.active {
+  background: #4338ca;
+  color: white;
+  box-shadow: 0 0 10px rgba(67,56,202,0.6);
+}
+
+/* Tick mark */
+.day.completed::after {
+  content: "✔";
+  position: absolute;
+  bottom: -20px;
+  font-size: 18px;
+  color: #27ae60;
+}
+
+/* ------------------------------
+   BANNER
+--------------------------------*/
+.banner {
+  width: 88%;
+  margin: 40px auto;
+  background: #dfe8ff;
+  padding: 45px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.banner-text h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.banner-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.banner-text ul {
+  padding-left: 18px;
+  margin-bottom: 25px;
+}
+
+.banner-text li {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.start-btn {
+  padding: 12px 28px;
+  background: #4338ca;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.start-btn:hover {
+  background: #352cab;
+}
+
+.banner-img img {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-img {
+    margin-top: 25px;
+  }
+}
+
+/* FIX: dropdown should open only on click */
+.profile-menu {
+  display: none;
+}
+
+.profile-menu.show {
+  display: block;
+}

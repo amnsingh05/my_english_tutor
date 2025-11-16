@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — My English Tutor</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Welcome Back 👋</h2>
+    <p class="subtitle">Login to continue your learning journey</p>
+
+    <form id="loginForm">
+      
+      <label>Email</label>
+      <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="signup-link">
+      Don't have an account? 
+      <a href="signup.html">Create Account</a>
+    </p>
+  </div>
+
+
+  <!-- LOGIN SCRIPT -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const savedUser = JSON.parse(localStorage.getItem("userData")); 
+      
+      if (!savedUser) {
+        alert("No user found. Please sign up first!");
+        return;
+      }
+
+      if (email === savedUser.email && password === savedUser.password) {
+        
+        // Save login state + username for dashboard
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("username", savedUser.name);
+  
+        alert("Login Successful!");
+        window.location.href = "dashboard.html";
+      
+      } else {
+        alert("Incorrect email or password");
+      }
+    });
+  </script>
+
+</body>
+</html>
