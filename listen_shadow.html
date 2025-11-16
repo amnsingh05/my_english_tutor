@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listen & Shadow Practice | My English Tutor</title>
+  <link rel="stylesheet" href="listen_shadow.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">My English Tutor</div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="vocabulary.html">Vocabulary</a>
+    <a href="reports.html">My Reports</a>
+  </nav>
+
+  <div class="profile-section">
+    <div class="profile-wrapper">
+      <img src="profile.png" class="profile-img" id="profilePreview">
+      <div class="profile-btn" id="usernameDisplay">User ▼</div>
+    </div>
+
+    <div class="profile-menu" id="profileMenu">
+      <a href="myprofile.html">My Profile</a>
+      <a href="settings.html">Settings</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- HEADER -->
+<section class="header">
+  <h1>🎧 Listen & Shadow Practice</h1>
+  <p>Improve pronunciation, rhythm, and fluency by repeating after native-like audio.</p>
+</section>
+
+
+
+<!-- DIFFICULTY SELECTOR -->
+<section class="difficulty-box">
+  <h2>🎚️ Choose Difficulty</h2>
+
+  <select id="difficultySelect">
+    <option value="easy">Easy — Simple Sentences</option>
+    <option value="medium">Medium — Daily Conversation</option>
+    <option value="hard">Hard — Advanced Topics</option>
+  </select>
+
+  <button class="generate-btn" id="generateSentenceBtn">Generate Sentence</button>
+</section>
+
+
+
+<!-- SENTENCE & AUDIO -->
+<section class="shadow-box">
+
+  <h2>🗣️ Shadow This Sentence</h2>
+
+  <p id="sentenceText">Click "Generate Sentence" to begin.</p>
+
+  <audio id="sentenceAudio" controls></audio>
+
+  <button class="shadow-btn" id="startShadowBtn">Start Shadow Practice</button>
+
+  <div class="shadow-instructions" id="shadowInstructions" style="display:none;">
+    🎤 Repeat the sentence out loud while the audio plays.  
+    Try to match tone, speed & pronunciation.
+  </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 My English Tutor — All rights reserved.
+</footer>
+
+
+
+<script src="listen_shadow.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI English Coach | My English Tutor</title>
+  <link rel="stylesheet" href="ai_coach.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">IELTS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html">My Reports</a>
+      <a class="active" href="coach.html">AI Coach</a>
+    </nav>
+
+    <div class="profile-section">
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" id="profilePreview">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="myprofile.html">My Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- PAGE HEADER -->
+  <section class="header">
+    <h1>🤖 AI English Coach</h1>
+    <p>Your personal AI tutor for grammar, pronunciation, writing & speaking help.</p>
+  </section>
+
+
+
+  <!-- EXAMPLE QUESTIONS -->
+  <section class="example-section">
+    <h2>Try Asking:</h2>
+
+    <div class="example-box">
+      <button class="example-btn">Correct my sentence: “He go to office everyday.”</button>
+      <button class="example-btn">Explain this word with an example: “Motivation”</button>
+      <button class="example-btn">Give me a speaking topic for 2 minutes</button>
+      <button class="example-btn">Help me practice interview answers</button>
+      <button class="example-btn">Fix my grammar in this paragraph</button>
+    </div>
+  </section>
+
+
+
+  <!-- CHAT WINDOW -->
+  <section class="chat-section">
+
+    <div class="chat-box" id="chatBox">
+      <!-- Messages appear here -->
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask your coach anything..." />
+      <button id="sendBtn">Send</button>
+    </div>
+
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2025 My English Tutor — All rights reserved.
+  </footer>
+
+
+
+<script src="ai_coach.js"></script>
+</body>
+</html>

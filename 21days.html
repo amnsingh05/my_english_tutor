@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21-Day Speaking Challenge</title>
+  <link rel="stylesheet" href="21days.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">IELTS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html">My Reports</a>
+    </nav>
+
+    <div class="profile-section">
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" alt="Profile" id="profilePhotoPreview">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="profile.html">My Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- MAIN HEADER -->
+  <section class="challenge-header">
+    <h1>🔥 21-Day Speaking Challenge</h1>
+    <p>Improve your English fluency with daily micro-speaking tasks.</p>
+
+    <div class="progress-box">
+      <h3>Your Progress</h3>
+      <p id="completedCount">0 / 21 Days Completed</p>
+      <p id="streakCount">Streak: 0 Days 🔥</p>
+    </div>
+  </section>
+
+
+  <!-- DAY GRID -->
+  <section class="days-grid" id="daysGrid"></section>
+
+
+  <!-- POPUP TASK MODAL -->
+  <div class="popup-overlay" id="taskPopup">
+    <div class="popup">
+      <h2 id="taskTitle">Day Task</h2>
+      <p id="taskDescription">Your task description will appear here.</p>
+
+      <button class="complete-btn" id="completeBtn">Mark as Completed</button>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+
+  <!-- SCRIPT -->
+  <script src="challenge.js"></script>
+
+</body>
+</html>

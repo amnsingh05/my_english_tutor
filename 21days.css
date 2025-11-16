@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f3f5ff;
+  color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+  background: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+}
+
+.nav-links { display: flex; gap: 20px; }
+.nav-links a {
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* DROPDOWN */
+.dropdown { position: relative; }
+.dropbtn { background: none; border: none; cursor: pointer; color: #555; }
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  top: 40px;
+  background: white;
+  padding: 10px 0;
+  border-radius: 10px;
+  min-width: 170px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.15);
+}
+.dropdown:hover .dropdown-content { display: block; }
+
+.dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  color: #444;
+  text-decoration: none;
+}
+.dropdown-content a:hover { background: #eef0ff; }
+
+/* PROFILE SECTION */
+.profile-section { position: relative; display: flex; align-items: center; }
+.profile-wrapper { display: flex; align-items: center; gap: 12px; }
+
+.profile-img {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 2px solid #4338ca; object-fit: cover;
+}
+.profile-btn {
+  background: #4338ca; color: white;
+  padding: 10px 18px; border-radius: 25px; cursor: pointer;
+}
+.profile-menu {
+  position: absolute; right: 0; top: 48px;
+  background: white; width: 170px; padding: 10px 0;
+  border-radius: 12px; display: none;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.15);
+}
+.profile-menu.show { display: block; }
+.profile-menu a {
+  display: block; padding: 10px 15px; color: #444; text-decoration: none;
+}
+.profile-menu a:hover { background: #eef0ff; }
+
+/* HEADER */
+.challenge-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.challenge-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.progress-box {
+  background: white;
+  width: 280px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+}
+
+/* DAY GRID */
+.days-grid {
+  padding: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.day-card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  transition: 0.25s;
+}
+
+.day-card:hover { transform: scale(1.05); }
+
+.day-card.completed {
+  background: #4338ca;
+  color: white;
+  box-shadow: 0 3px 16px rgba(67,56,202,0.4);
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.complete-btn {
+  background: #4338ca;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.close-btn {
+  background: #ccc;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  margin-top: 12px;
+  cursor: pointer;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulary Quiz | My English Tutor</title>
+  <link rel="stylesheet" href="vocabulary_quiz.css" />
+</head>
+
+<body>
+
+  <!-- ========================= NAVBAR ========================= -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">IELTS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="vocabulary.html" class="active">Vocabulary</a>
+      <a href="reports.html">My Reports</a>
+    </nav>
+
+    <!-- PROFILE -->
+    <div class="profile-section">
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" id="profilePreview">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="myprofile.html">My Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- ========================= PAGE HEADER ========================= -->
+  <section class="header">
+    <h1>🧠 Vocabulary Quiz</h1>
+    <p>Test your English vocabulary with fun, interactive questions!</p>
+  </section>
+
+
+
+  <!-- ========================= QUIZ BOX ========================= -->
+  <section class="quiz-box" id="quizBox">
+
+    <!-- Question -->
+    <div id="questionContainer">
+      <h2 id="questionText">Loading question...</h2>
+
+      <div id="optionsContainer"></div>
+
+      <button id="nextBtn" class="next-btn" disabled>Next</button>
+    </div>
+
+    <!-- Results -->
+    <div id="resultContainer" class="result-box" style="display:none;">
+      <h2>Your Score</h2>
+      <p id="scoreText">0 / 10</p>
+
+      <button class="retry-btn" onclick="startQuiz()">Retry Quiz</button>
+      <button class="back-btn" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+    </div>
+
+  </section>
+
+
+
+  <!-- ========================= SCRIPT ========================= -->
+  <script src="vocabulary_quiz.js"></script>
+
+  <script>
+    /* Login Check */
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const user = JSON.parse(localStorage.getItem("userData"));
+    if (!isLoggedIn || !user) window.location.href = "login.html";
+
+    document.getElementById("usernameDisplay").textContent = user.name + " ▼";
+
+    /* Profile Dropdown */
+    const profileBtn = document.querySelector('.profile-btn');
+    const profileMenu = document.querySelector('.profile-menu');
+
+    profileBtn.addEventListener('click', () => {
+      profileMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!profileBtn.contains(event.target) && !profileMenu.contains(event.target)) {
+        profileMenu.classList.remove('show');
+      }
+    });
+
+    /* Logout */
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+/* ===========================================
+   GLOBAL STYLES
+=========================================== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f3f5ff;
+  color: #222;
+}
+
+* {
+  box-sizing: border-box;
+  transition: 0.25s ease;
+}
+
+
+/* ===========================================
+   NAVBAR (matches dashboard)
+=========================================== */
+.navbar {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+
+/* ===========================================
+   DROPDOWN (PROGRAMS)
+=========================================== */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
+}
+
+.dropbtn:hover {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  background: #fff;
+  min-width: 170px;
+  padding: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background: #eef0ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* ===========================================
+   PROFILE SECTION (matches dashboard)
+=========================================== */
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4338ca;
+  object-fit: cover;
+}
+
+.profile-btn {
+  background: #4338ca;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 170px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 0;
+  display: none;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.profile-menu.show {
+  display: block;
+}
+
+.profile-menu a {
+  padding: 10px 15px;
+  display: block;
+  color: #444;
+  text-decoration: none;
+}
+
+.profile-menu a:hover {
+  background: #eef0ff;
+}
+
+
+/* ===========================================
+   PAGE HEADER
+=========================================== */
+.header {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+.header h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 18px;
+  color: #555;
+}
+
+
+/* ===========================================
+   CARD SECTIONS (shared style)
+=========================================== */
+.card-section {
+  width: 88%;
+  margin: 25px auto;
+}
+
+.card-section h2 {
+  margin-bottom: 12px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+
+/* WORD BOX */
+.word-box h1 {
+  font-size: 42px;
+  margin: 0;
+}
+
+.example {
+  font-style: italic;
+  color: #666;
+  margin-top: 8px;
+}
+
+
+/* ===========================================
+   INPUT & BUTTON STYLES
+=========================================== */
+.input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #bbb;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.btn {
+  margin-top: 18px;
+  padding: 12px 28px;
+  background: #4338ca;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #352cab;
+}
+
+
+/* ===========================================
+   GENERATED WORDS BOX
+=========================================== */
+.generated-box {
+  margin-top: 20px;
+  background: #eef0ff;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+
+/* ===========================================
+   SAVED WORDS GRID
+=========================================== */
+.saved-section {
+  width: 88%;
+  margin: 25px auto 50px;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.saved-card {
+  background: white;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+
+.save-btn {
+  margin-top: 10px;
+  background: #4338ca;
+  padding: 8px 18px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* ===========================================
+   FOOTER
+=========================================== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: #dfe2ff;
+  margin-top: 40px;
+  font-weight: 500;
+}

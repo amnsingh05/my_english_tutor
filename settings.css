@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f3f5ff;
+  color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #4338ca;
+  font-weight: 600;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  min-width: 170px;
+  padding: 8px 0;
+  display: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  color: #444;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #eef0ff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* PROFILE */
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #4338ca;
+}
+
+.profile-btn {
+  background: #4338ca;
+  padding: 10px 18px;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+}
+
+.profile-menu {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: white;
+  border-radius: 12px;
+  width: 170px;
+  padding: 10px 0;
+  display: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.profile-menu a {
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  color: #444;
+}
+
+.profile-menu a:hover {
+  background: #eef0ff;
+}
+
+.profile-menu.show {
+  display: block;
+}
+
+/* SETTINGS PAGE */
+.settings-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.settings-container h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.settings-box {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+}
+
+.settings-box h2 {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.save-btn {
+  margin-top: 15px;
+  background: #4338ca;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-section {
+  border-left: 4px solid #e11d48;
+}
+
+.delete-btn {
+  background: #e11d48;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}

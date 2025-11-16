@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grammar Lessons | My English Tutor</title>
+  <link rel="stylesheet" href="grammar_lesson.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">My English Tutor</div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="vocabulary.html">Vocabulary</a>
+    <a href="reports.html">My Reports</a>
+  </nav>
+
+  <div class="profile-section">
+    <div class="profile-wrapper">
+      <img src="profile.png" class="profile-img" id="profilePreview">
+      <div class="profile-btn" id="usernameDisplay">User ▼</div>
+    </div>
+
+    <div class="profile-menu" id="profileMenu">
+      <a href="myprofile.html">My Profile</a>
+      <a href="settings.html">Settings</a>
+      <a href="#">Help</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- PAGE HEADER -->
+<section class="header">
+  <h1>📘 Grammar Lessons</h1>
+  <p>Clear explanations, real examples, and practice exercises to improve your English grammar.</p>
+</section>
+
+
+
+<!-- TOPIC SELECTOR -->
+<section class="topic-box">
+  <h2>📚 Choose a Grammar Topic</h2>
+
+  <select id="topicSelect">
+    <option value="">Select a topic...</option>
+    <option value="tenses">Verb Tenses</option>
+    <option value="articles">Articles (a, an, the)</option>
+    <option value="prepositions">Prepositions</option>
+    <option value="modals">Modal Verbs</option>
+    <option value="conditionals">Conditionals</option>
+    <option value="passive">Passive Voice</option>
+  </select>
+
+  <button class="load-btn" id="loadLessonBtn">Load Lesson</button>
+</section>
+
+
+
+<!-- LESSON DISPLAY -->
+<section class="lesson-box" id="lessonBox">
+  <h2 id="lessonTitle">Select a topic to begin learning.</h2>
+  <p id="lessonContent"></p>
+
+  <div id="examples"></div>
+
+  <button class="practice-btn" id="showQuizBtn" style="display:none;">Start Practice Quiz</button>
+</section>
+
+
+
+<!-- QUIZ SECTION -->
+<section class="quiz-box" id="quizSection" style="display:none;">
+  <h2>📝 Practice Quiz</h2>
+
+  <p id="quizQuestion"></p>
+
+  <div id="quizOptions"></div>
+
+  <button id="nextQuestionBtn" class="next-btn" disabled>Next</button>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 My English Tutor — All rights reserved.
+</footer>
+
+
+<script src="grammar_lesson.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing Prompt of the Day | My English Tutor</title>
+  <link rel="stylesheet" href="writing_prompt.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">IELTS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html">My Reports</a>
+      <a href="#" class="active">Writing Prompt</a>
+    </nav>
+
+    <div class="profile-section">
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="myprofile.html">My Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>✍️ Writing Prompt of the Day</h1>
+    <p>Build your writing skills with a fresh creative prompt every day.</p>
+  </section>
+
+
+
+  <!-- PROMPT BOX -->
+  <section class="prompt-section">
+
+    <div class="prompt-card">
+      <h2>Today's Prompt</h2>
+
+      <p class="prompt-text" id="promptText">Loading prompt...</p>
+
+      <button class="new-btn" id="newPromptBtn">Generate New Prompt</button>
+    </div>
+
+  </section>
+
+
+
+  <!-- WRITING EDITOR -->
+  <section class="editor-section">
+    <h2>Your Response</h2>
+
+    <textarea id="writingBox" placeholder="Start writing your response here..."></textarea>
+
+    <div class="editor-actions">
+      <button class="save-btn" id="saveBtn">Save Writing</button>
+      <button class="download-btn" id="downloadBtn">Download</button>
+      <button class="clear-btn" id="clearBtn">Clear</button>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    © 2025 My English Tutor — All rights reserved.
+  </footer>
+
+
+
+<script src="writing_prompt.js"></script>
+
+</body>
+</html>

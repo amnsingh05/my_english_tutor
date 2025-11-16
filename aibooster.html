@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Vocabulary Booster | My English Tutor</title>
+  <link rel="stylesheet" href="aibooster.css" />
+</head>
+
+<body>
+
+  <!-- ========================= NAVBAR ========================= -->
+  <header class="navbar">
+    <div class="logo">My English Tutor</div>
+
+    <nav class="nav-links">
+      <a href="dashboard.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Programs ▼</button>
+        <div class="dropdown-content">
+          <a href="ielts.html">ILETS Prep</a>
+          <a href="interview.html">Job Interview Prep</a>
+          <a href="work_english.html">Professional English for Work</a>
+        </div>
+      </div>
+
+      <a href="courses.html">Courses</a>
+      <a href="reports.html">My Reports</a>
+      <a class="active" href="aibooster.html">Vocabulary</a>
+    </nav>
+
+    <div class="profile-section">
+      <div class="profile-wrapper">
+        <img src="profile.png" class="profile-img" id="profilePreview">
+        <div class="profile-btn" id="usernameDisplay">User ▼</div>
+      </div>
+
+      <div class="profile-menu" id="profileMenu">
+        <a href="myprofile.html">My Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="#">Help</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- ========================= HEADER ========================= -->
+  <section class="header">
+    <h1>🤖 AI-Powered Vocabulary Booster</h1>
+    <p>Learn smarter, faster, and more effectively with AI-generated vocabulary.</p>
+  </section>
+
+
+
+  <!-- ========================= WORD OF THE DAY ========================= -->
+  <section class="card-section">
+    <h2>📌 Word of the Day</h2>
+
+    <div class="card">
+      <h1 id="word">Loading...</h1>
+      <p id="definition">Fetching definition...</p>
+      <p id="example" class="example"></p>
+
+      <button class="btn" id="newWordBtn">Generate New Word</button>
+    </div>
+  </section>
+
+
+
+  <!-- ========================= AI WORD GENERATOR ========================= -->
+  <section class="card-section">
+    <h2>✨ Generate Words Based on Your Topic</h2>
+    <p>Tell the AI what you want to learn vocabulary for.</p>
+
+    <input type="text" id="topicInput" class="input" placeholder="e.g. Travel, Business, Fitness, Emotions..." />
+    <button class="btn" id="generateBtn">Generate Words</button>
+
+    <div class="generated-box" id="generatedWords"></div>
+  </section>
+
+
+
+  <!-- ========================= SAVED WORDS ========================= -->
+  <section class="card-section">
+    <h2>📚 Saved Words</h2>
+    <p>Vocabulary you saved gets stored here.</p>
+
+    <div class="saved-grid" id="savedGrid"></div>
+  </section>
+
+
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="footer">
+    © 2025 My English Tutor — All rights reserved.
+  </footer>
+
+
+  <script src="aibooster.js"></script>
+</body>
+</html>

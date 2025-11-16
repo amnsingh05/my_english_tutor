@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaking Practice | My English Tutor</title>
+  <link rel="stylesheet" href="start_speaking.css" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">My English Tutor</div>
+
+  <nav class="nav-links">
+    <a href="dashboard.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="vocabulary.html">Vocabulary</a>
+    <a href="reports.html">My Reports</a>
+  </nav>
+
+  <div class="profile-section">
+    <div class="profile-wrapper">
+      <img src="profile.png" class="profile-img" id="profilePreview">
+      <div class="profile-btn" id="usernameDisplay">User ▼</div>
+    </div>
+
+    <div class="profile-menu" id="profileMenu">
+      <a href="myprofile.html">My Profile</a>
+      <a href="settings.html">Settings</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- HEADER -->
+<section class="header">
+  <h1>🔊 Start Speaking Practice</h1>
+  <p>Boost your English speaking confidence with real-time practice & AI feedback.</p>
+</section>
+
+
+<!-- PROMPT GENERATOR -->
+<section class="prompt-box">
+  <h2>🎤 Speaking Topic</h2>
+  <p id="promptText">Click the button to generate a speaking prompt.</p>
+
+  <button class="generate-btn" id="generatePromptBtn">Generate New Prompt</button>
+</section>
+
+
+<!-- RECORDING BOX -->
+<section class="record-box">
+
+  <h2>🎙️ Your Recording</h2>
+
+  <div class="record-timer" id="timer">00:00</div>
+
+  <button class="record-btn" id="recordBtn">Start Recording</button>
+  <button class="stop-btn" id="stopBtn" disabled>Stop</button>
+
+  <div class="audio-preview" id="audioPreview"></div>
+</section>
+
+
+
+<script src="start_speaking.js"></script>
+
+</body>
+</html>

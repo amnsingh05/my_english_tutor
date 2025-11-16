@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f3f5ff;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.08);
+}
+.logo { font-size: 22px; font-weight: 700; }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500; color: #555;
+}
+.nav-links a:hover, .nav-links a.active { color: #4338ca; }
+
+/* PROFILE */
+.profile-section { position: relative; }
+.profile-wrapper { display: flex; align-items: center; gap: 10px; }
+.profile-img {
+  width: 40px; height: 40px;
+  border-radius: 50%; border: 2px solid #4338ca;
+  object-fit: cover;
+}
+.profile-btn {
+  background: #4338ca; color: #fff;
+  padding: 10px 18px; border-radius: 25px;
+  cursor: pointer; border: none;
+}
+.profile-menu {
+  position: absolute; right: 0; top: 50px;
+  width: 170px; background: #fff;
+  padding: 10px 0; border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  display: none;
+}
+.profile-menu.show { display: block; }
+.profile-menu a {
+  padding: 10px 15px; display: block;
+  text-decoration: none; color: #444;
+}
+.profile-menu a:hover { background: #eef0ff; }
+
+/* HEADER */
+.header { text-align: center; padding: 40px 20px; }
+
+/* TOPIC BOX */
+.topic-box {
+  width: 88%; margin: 20px auto;
+  background: white; padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.topic-box select {
+  width: 60%;
+  padding: 12px; border-radius: 14px;
+  border: 1px solid #ccc; font-size: 16px;
+}
+
+.load-btn {
+  margin-top: 12px;
+  padding: 12px 28px;
+  background: #4338ca; color: #fff;
+  border-radius: 25px; border: none;
+  cursor: pointer;
+}
+
+/* LESSON BOX */
+.lesson-box {
+  width: 88%; margin: 20px auto;
+  background: white; padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+.lesson-box h2 { margin-top: 0; }
+
+.practice-btn {
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* QUIZ BOX */
+.quiz-box {
+  width: 88%; margin: 25px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.quiz-option {
+  background: #eef0ff;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.quiz-option.selected {
+  background: #4338ca;
+  color: white;
+}
+
+.next-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #4338ca;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: #dfe2ff;
+  font-weight: 500;
+}
